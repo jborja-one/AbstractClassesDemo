@@ -33,19 +33,68 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
-
+            var vehicles = new List<Vehicle>()
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * 
              * Set the properties values with object initializer syntax
              */
 
+            // Create 4 instances: 1 Car, 1 Motorcycle, and 2 instances of type Vehicle but from derived classes
+            Car myFirstCar = new Car
+            {
+                Year = "2022",
+                Make = "Toyota",
+                Model = "Camry",
+                HasTrunk = true
+            };
+
+            Motorcycle myFirstBike = new Motorcycle
+            {
+                Year = "2023",
+                Make = "Harley-Davidson",
+                Model = "Sportster",
+                HasSideCart = false
+            };
+            
+            Vehicle mySecondCar = new Car
+            {
+                Year = "2019",
+                Make = "Honda",
+                Model = "Accord",
+                HasTrunk = true
+            };
+
+            Vehicle mySecondBike = new Motorcycle
+            {
+                Year = "2021",
+                Make = "Ducati",
+                Model = "Panigale",
+                HasSideCart = false
+            };
+
             /*
              * Add the 4 vehicles to the list
+
+            vehicles.Add(myFirstCar)
+            vehicles.Add(myFirstBike)
+            vehicles.Add(mySecondCar)
+            vehicles.Add(mySecondBike)               
+
              * Using a foreach loop iterate through the list and display each of the properties
              */
+            foreach(var vehicle in Vehicles){
+                Console.WriteLine($"Car Make: {vehicle.Make}, Car Model: {vehicle.Model}, Car Year: {vehicle.Year}")
+            } 
 
             // Call each of the drive methods for one car and one motorcycle
+            Console.WriteLine("Calling Drive methods for Car:");
+            myCar.DriveAbstract();
+            myCar.DriveVirtual();  // Uses base class method
+
+            Console.WriteLine("\nCalling Drive methods for Motorcycle:");
+            myMotorcycle.DriveAbstract();
+            myMotorcycle.DriveVirtual();  // Uses overridden method
 
             #endregion            
             Console.ReadLine();
