@@ -11,7 +11,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             /*
-             * Todo: Follow all comments!! 
+             * Todo: Follow all comments!!
              * Double click on the region (gray box) to view all comments
              */
 
@@ -25,7 +25,7 @@ namespace ConsoleUI
              * Vehicle class shall have a virtual method called DriveVirtual with a base implementation.
              */
 
-            /* 
+            /*
              * Now create 2 non-abstract classes: Car and Motorcycle, that inherit from Vehicle
              * Add a distinct property in the 2 derived classes such as HasTrunk for Car and HasSideCart for Motorcycle
              * Provide the implementations for the abstract methods
@@ -33,10 +33,10 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
-            var vehicles = new List<Vehicle>()
+            var vehicles = new List<Vehicle>();
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
-             * 
+             *
              * Set the properties values with object initializer syntax
              */
 
@@ -56,7 +56,7 @@ namespace ConsoleUI
                 Model = "Sportster",
                 HasSideCart = false
             };
-            
+
             Vehicle mySecondCar = new Car
             {
                 Year = "2019",
@@ -79,24 +79,25 @@ namespace ConsoleUI
             vehicles.Add(myFirstCar)
             vehicles.Add(myFirstBike)
             vehicles.Add(mySecondCar)
-            vehicles.Add(mySecondBike)               
+            vehicles.Add(mySecondBike)
 
              * Using a foreach loop iterate through the list and display each of the properties
              */
-            foreach(var vehicle in Vehicles){
-                Console.WriteLine($"Car Make: {vehicle.Make}, Car Model: {vehicle.Model}, Car Year: {vehicle.Year}")
-            } 
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Car Make: {vehicle.Make}, Car Model: {vehicle.Model}, Car Year: {vehicle.Year}");
+            };
 
             // Call each of the drive methods for one car and one motorcycle
             Console.WriteLine("Calling Drive methods for Car:");
-            myCar.DriveAbstract();
-            myCar.DriveVirtual();  // Uses base class method
+            myFirstCar.DriveAbstract();
+            mySecondCar.DriveVirtual();  // Uses base class method
 
             Console.WriteLine("\nCalling Drive methods for Motorcycle:");
-            myMotorcycle.DriveAbstract();
-            myMotorcycle.DriveVirtual();  // Uses overridden method
+            myFirstBike.DriveAbstract();
+            mySecondBike.DriveVirtual();  // Uses overridden method
 
-            #endregion            
+            #endregion
             Console.ReadLine();
         }
     }

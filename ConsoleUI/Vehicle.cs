@@ -1,5 +1,7 @@
 using System;
 
+namespace ConsoleUI;
+
 public abstract class Vehicle
 {
     // Properties with default values
