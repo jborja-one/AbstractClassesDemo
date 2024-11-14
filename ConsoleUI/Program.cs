@@ -73,13 +73,13 @@ namespace ConsoleUI
                 HasSideCart = false
             };
 
+            vehicles.Add(myFirstCar);
+            vehicles.Add(myFirstBike);
+            vehicles.Add(mySecondCar);
+            vehicles.Add(mySecondBike);
             /*
              * Add the 4 vehicles to the list
 
-            vehicles.Add(myFirstCar)
-            vehicles.Add(myFirstBike)
-            vehicles.Add(mySecondCar)
-            vehicles.Add(mySecondBike)
 
              * Using a foreach loop iterate through the list and display each of the properties
              */
